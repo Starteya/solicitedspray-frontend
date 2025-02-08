@@ -1,0 +1,24 @@
+/* src/components/Spinner.css */
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #e0e0e0; /* Light gray border */
+  border-top-color: #007bff; /* Blue border on top */
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* Keyframes for the spinning animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
