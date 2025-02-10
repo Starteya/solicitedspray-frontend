@@ -18,22 +18,26 @@ jobs:
         
       - name: Settup Node.js Environment
         uses: actions/setup-node@v3
-          with:
+        with:
             node-version: '22'  # Use the Node version compatible with your project
         
       - name: Install Dependencies
-          run: npm Install
+        run: npm Install
     
       - name: Build React App
-          run: npm run build
-            env:
+        run: npm run build
+        env:
               REACT_APP_API_BASE_URL: ${{ secrets.REACT_APP_API_BASE_URL }}
               REACT_APP_RECAPTCHA_SITE_KEY: ${{ secrets.REACT_APP_RECAPTCHA_SITE_KEY }}
               NODE_ENV: production
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
-          with:
+        with:
             repoToken: ${{ secrets.GITHUB_TOKEN }}
             firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SOLICITEDSPRAY }}
             projectId: solicitedspray
+        env:
+            REACT_APP_API_BASE_URL: ${{ secrets.REACT_APP_API_BASE_URL }}
+            REACT_APP_RECAPTCHA_SITE_KEY: ${{ secrets.REACT_APP_RECAPTCHA_SITE_KEY }}
+            NODE_ENV: production
