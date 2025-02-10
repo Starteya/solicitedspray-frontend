@@ -1,4 +1,4 @@
-# build and deploy on pull request 
+# build and deploy on pull request
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on PR
@@ -26,7 +26,11 @@ jobs:
     
       - name: Build React App
           run: npm run build
-          
+            env:
+              REACT_APP_API_BASE_URL: ${{ secrets.REACT_APP_API_BASE_URL }}
+              REACT_APP_RECAPTCHA_SITE_KEY: ${{ secrets.REACT_APP_RECAPTCHA_SITE_KEY }}
+              NODE_ENV: production
+
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
           with:
