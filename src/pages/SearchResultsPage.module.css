@@ -33,10 +33,6 @@
   margin: 0 10px;
 }
 
-.topLinks a:hover,
-.bottomLinks a:hover {
-  text-decoration: underline;
-}
 
 .mainContent {
   flex: 1;
@@ -58,6 +54,36 @@ font-family: 'Nosifer', sans-serif;
   font-size: 1.2em;
   color: #ff4d4d;
 }
+
+.noResults {
+font-size: 1.5rem;
+color: #fff;
+text-align: center;
+padding: 20px;
+margin-top: 30px;
+background-color: #1d1d1d;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+
+
+.noResults .message {
+margin-bottom: 10px;
+font-weight: bold;
+font-size: 1.3rem;
+color: #ff4d4d;
+}
+
+.noResults .suggestion {
+font-size: 1rem;
+color: #ccc;
+}
+
 
 /* Style the RouteList component if necessary */
 .routeList {
@@ -115,6 +141,46 @@ a:hover {
   text-decoration: underline;
 }
 
+.buttonContainer {
+margin-top: 20px;
+}
+
+
+
+
+.smallLogo {
+font-family: 'Nosifer', sans-serif;
+font-size: 1.5rem; /* Smaller than on the home page */
+margin: 0;
+}
+
+.smallSubtitle {
+margin: 5px 0 15px 0;
+font-size: 0.95rem;
+}
+
+.smallerReturnLink {
+display: inline-block;
+padding: 8px 16px; 
+background-color: #3017ea;
+color: #ffffff;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+transition: background-color 0.3s ease;
+font-size: 0.9rem; 
+}
+
+
+.centerContainer {
+margin-top: 20px;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
   .topLinks,
@@ -139,36 +205,6 @@ a:hover {
   .pagination button {
     padding: 8px 12px;
   }
+
 }
 
-.noResults {
-  font-size: 1.5rem;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  background-color: #1d1d1d;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.noResults .message {
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 1.3rem;
-}
-
-.noResults .suggestion {
-  font-size: 1rem;
-  color: #666;
-}
-
-.noResults .icon {
-  font-size: 2rem;
-  color: #e74c3c;
-  margin-bottom: 15px;
-}

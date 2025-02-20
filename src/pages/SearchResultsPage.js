@@ -1,11 +1,12 @@
 // src/pages/SearchResultsPage.js
-
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import RouteList from '../components/RouteList'; // route data
 import Spinner from '../components/Spinner'; // for loading
 import Pagination from '../components/Pagination'; // Import pagination
+import SearchBar from '../components/SearchBar'; // Import the search bar component
 import styles from './SearchResultsPage.module.css';
 
 
@@ -73,15 +74,29 @@ if (error) {
 
 if (routes.length === 0) {
     return (
-    <div className={styles.noResults}>
-      <div className={styles.icon}>🚫</div> {/* You can replace this with an actual icon */}
-      <div className={styles.message}>
-        No routes found for "{query}".
+      <div className={styles.searchResultsPage}>
+      <div className={styles.topLinks}>
+        <Link to="/">Home</Link>
       </div>
+  
+      <div className={styles.centerContainer}>
+        <h1 className={styles.smallLogo}>Solicited Spray</h1>
+      <SearchBar />
+      <div className={styles.noResults}>
+      <div className={styles.message}>
+        No routes found for "<strong>{query}</strong>".
+      </div>
+  </div>
       <div className={styles.suggestion}>
         Try refining your search, check the spelling, or remove unecessary punctuation.
       </div>
+  </div>
+  
+  <div className={styles.bottomLinks}>
+    <a href="/contact">Contact</a>
+    <a href="/privacy">Privacy</a>
     </div>
+  </div>
   );
 }
 
