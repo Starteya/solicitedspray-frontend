@@ -87,7 +87,7 @@ const [statusMessage, setStatusMessage] = useState('');
       <div className={styles.mainContent}>
         <h1>Contact</h1>
         <p>
-          If you have any questions, concerns, suggestions, etc., please feel free to contact using the form below! Supplying an email address is optional, but if you'd like a follow-up/reply, please provide yours.
+          If you have any questions, concerns, suggestions, etc., please feel free to contact using the form below! Providing an email address is optional, but if you'd like a follow-up/reply, please provide yours.
         </p>
         <p><em>No marketing or other solicitation!</em></p>
       
