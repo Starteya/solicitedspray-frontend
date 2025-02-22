@@ -65,7 +65,7 @@ const handlePageChange = (pageNumber) => {
 };
 
 if (loading) {
-  return <Spinner />;
+  return <Spinner/>;
 }
 
 if (error) {
@@ -79,6 +79,7 @@ if (routes.length === 0) {
         <Link to="/">Home</Link>
       </div>
   
+  
       <div className={styles.centerContainer}>
         <h1 className={styles.smallLogo}>Solicited Spray</h1>
       <SearchBar />
@@ -86,15 +87,17 @@ if (routes.length === 0) {
       <div className={styles.message}>
         No routes found for "<strong>{query}</strong>".
       </div>
-  </div>
-      <div className={styles.suggestion}>
+   <div className={styles.suggestion}>
         Try refining your search, check the spelling, or remove unecessary punctuation.
       </div>
   </div>
+  </div>
+  
+  <div className="spacer"></div>
   
   <div className={styles.bottomLinks}>
-    <a href="/contact">Contact</a>
-    <a href="/privacy">Privacy</a>
+    <Link to="/contact">Contact</Link>
+    <Link to="/privacy">Privacy</Link>
     </div>
   </div>
   );
@@ -104,12 +107,11 @@ return (
  <div className={styles.searchResultsPage}>
       {/* Top Links */}
       <div className={styles.topLinks}>
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
     {/*<a href="/add-video">Add Your Video</a>*/}
       </div>
 
-      {/* Main Content */}
-      <div className={styles.mainContent}>
+      <div className={styles.centerContainer}>
         {loading ? (
           <Spinner />
         ) : error ? (
@@ -118,6 +120,7 @@ return (
           <div className={styles.noResults}>No routes found for "{query}".</div>
         ) : (
           <>
+          <SearchBar />
             <h2>Search Results for "{query}"</h2>
             <RouteList routes={routes} />
             <Pagination
@@ -130,10 +133,12 @@ return (
         )}
       </div>
 
+  <div className="spacer"></div>
+
       {/* Bottom Links */}
       <div className={styles.bottomLinks}>
-        <a href="/contact">Contact</a>
-        <a href="/privacy">Privacy</a>
+        <Link to="/contact">Contact</Link>
+        <Link to="/privacy">Privacy</Link>
       </div>
     </div>
 );

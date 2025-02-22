@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   background-color: #121212;
+  justify-content: space-between;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -17,36 +18,41 @@
   display: flex;
   padding: 20px;
 }
-/* Space out the top links */
+
 .topLinks {
   justify-content: space-between; 
 }
 
-/* Center the bottom links */
+
 .bottomLinks {
-  justify-content: center; /* Center the links */
-}
-.topLinks a,
-.bottomLinks a {
-  color: #9f9fff; /* Match link color from other pages */
-  text-decoration: none;
-  margin: 0 10px;
+justify-content: center;
+margin: 20px 20px;
 }
 
-
-.mainContent {
-  flex: 1;
+.centerContainer {
+  padding: 20px;
+  margin: 0 auto;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  text-align: center;
 }
 
-.mainContent h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-font-family: 'Nosifer', sans-serif;
+.centerContainer h2{
+  font-size: 1.5rem;
+  font-family: 'Nosifer', sans-serif;
+}
 
+/* Links Styling */
+a {
+  color: #3017ea;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .errorMessage,
@@ -70,7 +76,11 @@ align-items: center;
 flex-direction: column;
 }
 
-
+.noResults .icon {
+font-size: 2rem;
+color: #e74c3c; /* pick an accent color or keep the emoji alone */
+margin-bottom: 15px;
+}
 
 .noResults .message {
 margin-bottom: 10px;
@@ -109,6 +119,9 @@ color: #ccc;
 /* Style the Pagination component if necessary */
 .pagination {
   margin: 20px 0;
+  display: flex; /* Ensure pagination container remains in row layout */
+  justify-content: center; /* Center the buttons horizontally */
+  flex-wrap: nowrap;
 }
 
 .pagination button {
@@ -131,22 +144,10 @@ color: #ccc;
   font-size: 1em;
 }
 
-/* Links Styling */
-a {
-  color: #3017ea;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
 
 .buttonContainer {
 margin-top: 20px;
 }
-
-
-
 
 .smallLogo {
 font-family: 'Nosifer', sans-serif;
@@ -172,14 +173,7 @@ font-size: 0.9rem;
 }
 
 
-.centerContainer {
-margin-top: 20px;
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-}
+
 
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
@@ -187,6 +181,11 @@ text-align: center;
   .bottomLinks {
     flex-direction: column;
     align-items: center;
+  }
+    /* Add left and right padding to center container */
+  .centerContainer {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .topLinks a,
@@ -202,6 +201,10 @@ text-align: center;
     font-size: 1.5em;
   }
 
+  .mainContent p {
+    font-size: 1em;
+  }
+  
   .pagination button {
     padding: 8px 12px;
   }

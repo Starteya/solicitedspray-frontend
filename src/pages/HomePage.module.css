@@ -48,15 +48,7 @@
             margin: 20px 0;
         }
 
-        a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #3017ea;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        
+    
         /* Responsive adjustments */
         @media screen and (max-width: 600px) {
           .topLinks,

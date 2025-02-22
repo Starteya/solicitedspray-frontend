@@ -5,7 +5,6 @@
   margin-top: 20px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -47,12 +46,16 @@
 /* Adjustments for small screens */
 @media screen and (max-width: 600px) {
   .pagination {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
   .pagination-info {
     margin-left: 0;
     margin-top: 10px;
+  }
+  
+  .pagination-button{
+    font-size: x-small;
   }
 }
