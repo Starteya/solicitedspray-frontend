@@ -2,75 +2,83 @@
 
 /* Include your CSS styles here */
 
-        .homepage {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 100vh;
-            color: #ffffff;
-        }
-        
-        .topLinks {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 20px;
-            box-sizing: border-box;
-        }
-        
-        
-        .centerContainer {
-            margin-top: 20px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        
-        h1 {
-            font-family: 'Nosifer', sans-serif;
-            font-size: 2.0em;
-            margin: 0;
-        }
-        
-        p {
-            margin: 5px 0 20px 0;
-        }
-        
-        .bottomLinks {
-            margin: 20px 0;
-        }
+.homepage {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    color: #ffffff;
+}
 
-    
-        /* Responsive adjustments */
-        @media screen and (max-width: 600px) {
-          .topLinks,
-          .bottomLinks {
-            flex-direction: column;
-            align-items: center;
-          }
+.topLinks {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    box-sizing: border-box;
+}
 
-          .topLinks a,
-          .bottom-links a {
-            margin: 5px 0;
-          }
+.topLinks a,
+.bottomLinks a,
+a {
+    color: #9f9fff; /* Match link color from other pages */
+    text-decoration: none;
+}
 
-          .mainContent {
-            padding: 10px;
-          }
+a:hover {
+    text-decoration: underline;
+}
 
-          .mainContent h2 {
-            font-size: 1.5em;
-          }
+.centerContainer {
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
-          .mainContent p {
-            font-size: 1em;
-          }
-        }
+h1 {
+    font-family: "Nosifer", sans-serif;
+    font-size: 2em;
+    margin: 0;
+}
+
+p {
+    margin: 5px 0 20px 0;
+}
+
+.bottomLinks {
+    margin: 20px 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .topLinks,
+    .bottomLinks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topLinks a,
+    .bottom-links a {
+        margin: 5px 0;
+    }
+
+    .mainContent {
+        padding: 10px;
+    }
+
+    .mainContent h2 {
+        font-size: 1.5em;
+    }
+
+    .mainContent p {
+        font-size: 1em;
+    }
+}
