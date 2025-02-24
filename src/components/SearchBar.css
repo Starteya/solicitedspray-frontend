@@ -28,7 +28,7 @@
 
 .search-bar button {
   flex: 0 0 auto;
-  padding: 5px 5px;
+  padding: 10px 15px;
   border: 1px solid #333;
   border-left: none;
   border-radius: 0 5px 5px 0;
@@ -74,20 +74,27 @@
   border-bottom: none;
 }
 
-@media (max-width: 400px) {
-  .search-bar {
+@media (max-width: 600px) {
+  .search-bar form {
     flex-direction: column;
+    width: 100%;
   }
 
-  .search-bar input[type='text'],
+  
+  .search-bar input[type='text']{
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+  }
+  
+  
   .search-bar button {
     width: 100%;
     border-radius: 5px;
-  }
-
-  .search-bar button {
     margin-top: 10px;
-    border-top: 1px solid #333;
+    border: 1px solid #333;
   }
 
   .search-results {

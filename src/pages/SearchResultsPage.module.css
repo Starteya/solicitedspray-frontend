@@ -16,6 +16,189 @@
 .topLinks,
 .bottomLinks {
   display: flex;
+  padding: 10px;
+}
+
+.topLinks {
+  justify-content: space-between; 
+}
+
+
+.bottomLinks {
+justify-content: center;
+margin: 20px 20px;
+}
+
+.centerContainer {
+  padding: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.centerContainer h2{
+  font-size: 1.5rem;
+  font-family: 'Nosifer', sans-serif;
+}
+
+/* Links Styling */
+a {
+  color: #3017ea;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.errorMessage,
+.noResults {
+  font-size: 1.2em;
+  color: #ff4d4d;
+}
+
+.noResults {
+font-size: 1.5rem;
+color: #fff;
+text-align: center;
+padding: 20px;
+margin-top: 30px;
+background-color: #1d1d1d;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.noResults .icon {
+font-size: 2rem;
+color: #e74c3c; /* pick an accent color or keep the emoji alone */
+margin-bottom: 15px;
+}
+
+.noResults .message {
+margin-bottom: 10px;
+font-weight: bold;
+font-size: 1.3rem;
+color: #ff4d4d;
+}
+
+.noResults .suggestion {
+font-size: 1rem;
+color: #ccc;
+}
+
+
+/* Style the RouteList component if necessary */
+.routeList {
+  width: 100%;
+  max-width: 800px;
+}
+
+.routeListItem {
+  background-color: #1e1e1e;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.routeListItem h3 {
+  margin: 0 0 10px 0;
+}
+
+.routeListItem p {
+  margin: 5px 0;
+}
+
+/* Style the Pagination component if necessary */
+.pagination {
+  margin: 20px 0;
+  display: flex; /* Ensure pagination container remains in row layout */
+  justify-content: center; /* Center the buttons horizontally */
+  flex-wrap: nowrap;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  background-color: #3017ea;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-size: 1em;
+}
+
+
+.buttonContainer {
+margin-top: 20px;
+}
+
+.smallLogo {
+font-family: 'Nosifer', sans-serif;
+font-size: 1.5rem; /* Smaller than on the home page */
+margin: 0;
+}
+
+.smallSubtitle {
+margin: 5px 0 15px 0;
+font-size: 0.95rem;
+}
+
+.smallerReturnLink {
+display: inline-block;
+padding: 8px 16px; 
+background-color: #3017ea;
+color: #ffffff;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+transition: background-color 0.3s ease;
+font-size: 0.9rem; 
+}
+
+
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .topLinks,
+  .bottomLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+/* src/pages/SearchResultsPage.module.css */
+
+/* Base styles similar to HomePage */
+.searchResultsPage {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  justify-content: space-between;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topLinks,
+.bottomLinks {
+  display: flex;
   padding: 20px;
 }
 
@@ -182,11 +365,31 @@ font-size: 0.9rem;
     flex-direction: column;
     align-items: center;
   }
-    /* Add left and right padding to center container */
-  .centerContainer {
-    padding-left: 10px;
-    padding-right: 10px;
+
+  .topLinks a,
+  .bottomLinks a {
+    margin: 5px 0;
   }
+
+  .mainContent {
+    padding: 10px;
+  }
+
+  .mainContent h2 {
+    font-size: 1.5em;
+  }
+
+  .mainContent p {
+    font-size: 1em;
+  }
+  
+  .pagination button {
+    padding: 8px 12px;
+  }
+
+}
+
+
 
   .topLinks a,
   .bottomLinks a {
