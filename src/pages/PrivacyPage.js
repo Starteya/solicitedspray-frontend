@@ -40,7 +40,7 @@ function PrivacyPage() {
     By using Solicited Spray, you consent to the use of cookies. Cookies are small text files that store information about your interactions with the website. The cookies we use fall into the following categories: <ul>
       Required cookies:
         <li>These cookies are necessary for basic functionality, such as keeping you logged in when you return. </li>
-            <br/>Analytics cookies: <li>We use cookies to collect anonymized data about how you interact with the site (e.g., device type, pages viewed, time spent on the site, and your geographic location). This data is used to improve the website experience and is stored securely by Google Analytics. For more information about cookies, please visit<a href="https://www.internetcookies.com">InternetCookies.com</a> <br/>You can also contact us with any questions or concerns regarding cookies.</li>
+            <br/>Analytics cookies: <li>We use cookies to collect anonymized data about how you interact with the site (e.g., device type, pages viewed, time spent on the site, and your geographic location). This data is used to improve the website experience and is stored securely by Google Analytics. For more information about cookies, please visit <a href="https://www.internetcookies.com">InternetCookies.com</a> <br/>You can also contact us with any questions or concerns regarding cookies.</li>
     </ul>
     </p>
     <h2>Personal Information Policy</h2>
@@ -68,9 +68,9 @@ function PrivacyPage() {
     {/*<h3>Instagram Terms of Service</h3>
     Solicited Spray displays embedded Instagram videos. We do not use the Instagram API for these videos. By using our website, you agree to the<a href="https://help.instagram.com/581066165581870/">Instagram Terms of Service.</a>*/}
     <h3>Vimeo Terms of Service</h3>
-    We utilize Vimeo for video hosting and the Vimeo API to collect video details. By using Solicited Spray, you agree to the<a href="https://vimeo.com/terms">Vimeo Terms of Service</a>and the<a href="https://developer.vimeo.com/guidelines/terms">Vimeo API Terms of Service.</a>We collect video details such as titles, descriptions, and thumbnails through the Vimeo API.
+    We utilize Vimeo for video hosting and the Vimeo API to collect video details. By using Solicited Spray, you agree to the <a href="https://vimeo.com/terms">Vimeo Terms of Service </a>and the <a href="https://developer.vimeo.com/guidelines/terms">Vimeo API Terms of Service. </a>We collect video details such as titles, descriptions, and thumbnails through the Vimeo API.
     <h3>YouTube Terms of Service</h3>
-    We use YouTube for video hosting and the YouTube API to collect video details. By using Solicited Spray, you agree to the<a href="https://www.youtube.com/static?template=terms">YouTube Terms of Service</a>and<a href="https://policies.google.com/terms?hl=en-US">Google Terms of Service.</a>The following data is collected via the YouTube API:
+    We use YouTube for video hosting and the YouTube API to collect video details. By using Solicited Spray, you agree to the <a href="https://www.youtube.com/static?template=terms">YouTube Terms of Service</a> and <a href="https://policies.google.com/terms?hl=en-US">Google Terms of Service. </a> The following data is collected via the YouTube API:
     <ul>
         <li>Video Title</li>
     <li>Video Description</li>

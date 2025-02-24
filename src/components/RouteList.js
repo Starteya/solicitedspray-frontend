@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../pages/RoutePage.module.css'; // Import the CSS file
+import styles from './RouteList.module.css'; // Import the CSS file
 
 
 const RouteList = ({ routes }) => {

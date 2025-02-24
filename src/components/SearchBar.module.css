@@ -1,6 +1,6 @@
-/* src/components/SearchBar.css */
+/* src/components/SearchBar.module.css */
 
-.search-bar {
+.searchBar {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -9,12 +9,12 @@
   position: relative;
 }
 
-.search-bar form {
+.searchBar form {
   display: flex;
   width: 100%;
 }
 
-.search-bar input[type='text'] {
+.searchBar input[type="text"] {
   flex: 1;
   padding: 10px;
   min-width: 0;
@@ -26,7 +26,7 @@
   font-size: 1.2em;
 }
 
-.search-bar button {
+.searchBar button {
   flex: 0 0 auto;
   padding: 10px 15px;
   border: 1px solid #333;
@@ -39,11 +39,11 @@
   outline: none;
 }
 
-.search-bar button:hover {
+.searchBar button:hover {
   background-color: #4431c9;
 }
 
-.search-results {
+.searchResults {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -59,45 +59,43 @@
   z-index: 1000;
 }
 
-.search-results li {
+.searchResults li {
   padding: 10px;
   cursor: pointer;
   border-bottom: 1px solid #333;
   color: #ffffff;
 }
 
-.search-results li:hover {
+.searchResults li:hover {
   background-color: #2e2e2e;
 }
 
-.search-results li:last-child {
+.searchResults li:last-child {
   border-bottom: none;
 }
 
 @media (max-width: 600px) {
-  .search-bar form {
+  .searchBar form {
     flex-direction: column;
     width: 100%;
   }
 
-  
-  .search-bar input[type='text']{
+  .searchBar input[type="text"] {
     width: 100%;
     border-radius: 5px;
     margin-top: 10px;
     border: 1px solid #333;
     box-sizing: border-box;
   }
-  
-  
-  .search-bar button {
+
+  .searchBar button {
     width: 100%;
     border-radius: 5px;
     margin-top: 10px;
     border: 1px solid #333;
   }
 
-  .search-results {
+  .searchResults {
     position: static;
   }
 }

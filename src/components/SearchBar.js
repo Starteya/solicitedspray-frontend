@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './SearchBar.css';
+import styles from './SearchBar.module.css';
 import { fetchRoutes } from '../api/api'; // import fetchRoutes function
 
 function SearchBar() {
@@ -71,7 +71,7 @@ function SearchBar() {
   };
 
   return (
-    <div className="search-bar">
+    <div className={styles.searchBar}>
       <form onSubmit={handleSearch} autoComplete="off">
         <input
           type="text"
@@ -82,7 +82,7 @@ function SearchBar() {
         <button type="submit">Search</button>
       </form>
       {results.length > 0 && query.trim() !== '' && (
-        <ul className="search-results">
+        <ul className={styles.searchResults}>
           {results.map((result) => {
             return (<li key={result._id} onClick={() => handleResultClick(result)}>
        <strong>{result.name}</strong>

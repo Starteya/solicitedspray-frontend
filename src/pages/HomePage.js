@@ -1,9 +1,9 @@
 // src/pages/HomePage.js
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import SearchBar from '../components/SearchBar';
-import styles from './HomePage.module.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import SearchBar from "../components/SearchBar";
+import styles from "./HomePage.module.css";
 
 function HomePage() {
   return (
@@ -11,7 +11,6 @@ function HomePage() {
       {/* Top Links */}
       <div className={styles.topLinks}>
         <Link to="/">Home</Link>
-      {/*<Link to="/add-video">Add Your Video</Link>*/}
       </div>
 
       {/* Center Container */}
@@ -22,7 +21,7 @@ function HomePage() {
       </div>
 
       <div className="spacer"></div>
-      
+
       {/* Bottom Links */}
       <div className={styles.bottomLinks}>
         <Link to="/contact">Contact</Link>
@@ -31,6 +30,5 @@ function HomePage() {
     </div>
   );
 }
-
 
 export default HomePage;

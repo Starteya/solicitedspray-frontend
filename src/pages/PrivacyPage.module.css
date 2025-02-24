@@ -12,31 +12,21 @@
   min-height: 100vh;
 }
 
-.topLinks,
-.bottomLinks {
-  display: flex;
-  padding: 20px;
-}
-
-/* Space out the top links */
 .topLinks {
-  justify-content: space-between; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    box-sizing: border-box;
 }
-
-/* Center the bottom links */
 .bottomLinks {
-  justify-content: center; /* Center the links */
+    display: flex;
+    padding: 20px 20px;
+    justify-content: center;
 }
 
-.topLinks a,
-.bottomLinks a,
-a {
-  color: #9f9fff; /* Match link color from other pages */
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+.bottomLinks a {
+    margin: 0 10px;
 }
 
 .mainContent {
@@ -75,7 +65,7 @@ a:hover {
   .topLinks,
   .bottomLinks {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .topLinks a,

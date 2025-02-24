@@ -1,4 +1,4 @@
-/* src/components/Pagination.css */
+/* src/components/Pagination.module.css */
 
 /* Container for the pagination */
 .pagination {
@@ -9,7 +9,7 @@
 }
 
 /* Pagination buttons */
-.pagination-button {
+.paginationButton {
   margin: 5px;
   padding: 10px 15px;
   background-color: #3017ea; /* Matching your link color */
@@ -21,23 +21,23 @@
   transition: background-color 0.3s ease;
 }
 
-.pagination-button:hover {
+.paginationButton:hover {
   background-color: #4731ff; /* Slightly lighter on hover */
 }
 
-.pagination-button:disabled,
-.pagination-button[disabled] {
+.paginationButton:disabled,
+.paginationButton[disabled] {
   background-color: #555;
   cursor: not-allowed;
 }
 
-.pagination-button.active {
+.paginationButton.active {
   background-color: #ffffff;
   color: #3017ea;
   border: 1px solid #3017ea;
 }
 
-.pagination-info {
+.paginationInfo {
   margin-left: 20px;
   font-size: 1em;
   color: #ffffff;
@@ -50,12 +50,12 @@
     align-items: center;
   }
 
-  .pagination-info {
+  .paginationInfo {
     margin-left: 0;
     margin-top: 10px;
   }
   
-  .pagination-button{
+  .paginationButton{
     font-size: x-small;
   }
 }

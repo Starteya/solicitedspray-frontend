@@ -22,16 +22,14 @@
     padding: 20px 20px;
     box-sizing: border-box;
 }
-
-.topLinks a,
-.bottomLinks a,
-a {
-    color: #9f9fff; /* Match link color from other pages */
-    text-decoration: none;
+.bottomLinks {
+    display: flex;
+    padding: 20px 20px;
+    justify-content: center;
 }
 
-a:hover {
-    text-decoration: underline;
+.bottomLinks a {
+    margin: 0 10px;
 }
 
 .centerContainer {
@@ -45,6 +43,7 @@ a:hover {
     text-align: center;
 }
 
+/* Applied to all h1, p, a throughout unless overidden*/
 h1 {
     font-family: "Nosifer", sans-serif;
     font-size: 2em;
@@ -55,8 +54,13 @@ p {
     margin: 5px 0 20px 0;
 }
 
-.bottomLinks {
-    margin: 20px 0;
+a {
+    color: #9f9fff; /* Match link color from other pages */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive adjustments */
@@ -70,24 +74,10 @@ p {
     .centerContainer {
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 25px;
-        margin-right: 25px;
     }
 
     .topLinks a,
-    .bottom-links a {
+    .bottomLinks a {
         margin: 5px 0;
-    }
-
-    .mainContent {
-        padding: 10px;
-    }
-
-    .mainContent h2 {
-        font-size: 1.5em;
-    }
-
-    .mainContent p {
-        font-size: 1em;
     }
 }

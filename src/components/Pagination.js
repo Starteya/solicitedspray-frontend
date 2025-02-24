@@ -1,7 +1,7 @@
 // src/components/Pagination.js
 
 import React from 'react';
-import './Pagination.css'; // Import the CSS file
+import styles from './Pagination.module.css'; // Import the CSS file
 
 function Pagination({ currentPage, totalPages, onPageChange, totalResults }) {
   const pageNumbers = [];
@@ -21,11 +21,11 @@ function Pagination({ currentPage, totalPages, onPageChange, totalResults }) {
   }
 
   return (
-    <div className="pagination">
+    <div className={styles.pagination}>
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="pagination-button"
+        className={styles.paginationButton}
       >
         Previous
       </button>
@@ -34,7 +34,7 @@ function Pagination({ currentPage, totalPages, onPageChange, totalResults }) {
         <button
           key={number}
           onClick={() => onPageChange(number)}
-          className={`pagination-button ${number === currentPage ? 'active' : ''}`}
+          className={`${styles.paginationButton} ${number === currentPage ? styles.active : ''}`}
           disabled={number === currentPage}
         >
           {number}
@@ -44,12 +44,12 @@ function Pagination({ currentPage, totalPages, onPageChange, totalResults }) {
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="pagination-button"
+        className={styles.paginationButton}
       >
         Next
       </button>
 
-      <span className="pagination-info">
+      <span className={styles.paginationInfo}>
         Total Results: {totalResults}
       </span>
     </div>

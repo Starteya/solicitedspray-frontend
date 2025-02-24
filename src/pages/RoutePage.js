@@ -59,7 +59,9 @@ const RoutePage = () => {
         <div className={styles.videoList}>
           {route.videos && route.videos.length > 0 ? (
             route.videos.map((video, index) => (
-              <VideoEmbed key={index} video={video} />
+              <div key={index} className={styles.videoWrapper}>
+      <VideoEmbed video={video} />
+    </div>
             ))
           ) : (
             <p>No videos available for this route.</p>

@@ -1,0 +1,52 @@
+/* src/components/RouteList.module.css */
+.routeList {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 20px; /* Add padding around the container */
+    margin: 0 auto; /* Center the container within its parent */
+    max-width: 800px; /* Limit the width for better readability */
+    background-color: #121212; /* Match the background color of other pages */
+    color: #ffffff; /* Ensure text is readable */
+}
+
+.routeListItem {
+    margin: 10px 0; /* Add vertical spacing between items */
+    padding: 10px; /* Optional: Add padding for better visual separation */
+    background-color: #1e1e1e; /* Optional: Add a background color for contrast */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.routeLink {
+    text-decoration: none;
+    color: #ffffff; /* Ensure the text color is readable */
+}
+
+.routeName {
+    font-size: 1.5em;
+    margin-bottom: 5px; /* Add spacing below the route name */
+}
+
+.routeDetails {
+    font-size: 1em;
+    color: #cccccc; /* Use a lighter color for details */
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 600px) {
+  .routeList {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .routeListItem {
+    padding: 8px; /* Reduce padding inside each item */
+  }
+
+  .routeName {
+    font-size: 1.2em; /* Reduce font size for route names */
+  }
+
+  .routeDetails {
+    font-size: 0.9em; /* Reduce font size for route details */
+  }
+}

@@ -120,7 +120,7 @@ return (
           <div className={styles.noResults}>No routes found for "{query}".</div>
         ) : (
           <>
-          <SearchBar />
+          <SearchBar/>
             <h2>Search Results for "{query}"</h2>
             <RouteList routes={routes} />
             <Pagination
