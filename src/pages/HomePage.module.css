@@ -36,6 +36,8 @@ a:hover {
 
 .centerContainer {
     margin-top: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -69,6 +71,7 @@ p {
     .bottom-links a {
         margin: 5px 0;
     }
+    
 
     .mainContent {
         padding: 10px;
