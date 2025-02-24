@@ -100,7 +100,6 @@ a:hover {
   color: #ccc;
 }
 
-/* Style the RouteList component if necessary */
 .routeList {
   width: 100%;
   max-width: 800px;
@@ -208,5 +207,10 @@ a:hover {
 
   .pagination button {
     padding: 8px 12px;
+  }
+  
+  .pagination {
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }

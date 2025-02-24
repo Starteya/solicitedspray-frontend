@@ -67,11 +67,17 @@ p {
         align-items: center;
     }
 
+    .centerContainer {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
     .topLinks a,
     .bottom-links a {
         margin: 5px 0;
     }
-    
 
     .mainContent {
         padding: 10px;
