@@ -87,7 +87,6 @@ dist/
 
 # dotenv environment variables file
 .env
-.env-production
 
 # dataconnect generated files
 .dataconnect
