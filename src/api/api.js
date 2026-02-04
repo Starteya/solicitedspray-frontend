@@ -2,11 +2,10 @@
 
 import axios from 'axios';
 
-// Dynamically set API_BASE_URL based on environment
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const API_BASE_URL = 'https://api.solicitedspray.com';
 
 export const fetchRoutes = (query) =>
   axios.get(`${API_BASE_URL}/api/routes/search`, { params: { query } });
 
-export const fetchRouteDetails = (id) => axios.get(`${API_BASE_URL}/api/routes/${id}`);
-
+export const fetchRouteDetails = (id) =>
+  axios.get(`${API_BASE_URL}/api/routes/${id}`);
