@@ -1,20 +1,22 @@
 // src/components/SearchBar.js
+// A search bar that provides live-search auto complete from the route database
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './SearchBar.module.css';
-import { fetchRoutes } from '../api/api'; // import fetchRoutes function
+import { fetchRoutes } from '../api/api'; // import fetchRoutes function which fetches data from backend
 
+// React Component
 function SearchBar() {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const navigate = useNavigate();
-  const timerRef = useRef(null);
+  const [query, setQuery] = useState(''); // state variable
+  const [results, setResults] = useState([]); // state variable
+  const navigate = useNavigate(); // React component to change pages
+  const timerRef = useRef(null); // used for debouncing the search requests
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (query.trim()) {
-      navigate(`/search?query=${encodeURIComponent(query)}`);
+    if (query.trim()) { // remove spaces
+      navigate(`/search?query=${encodeURIComponent(query)}`); // ensures special chars are safe in url
     }
   };
 
@@ -38,20 +40,20 @@ function SearchBar() {
   }
 };
 
-// Effect to handle debounced search queries
+// Effect to handle debounced search queries. 
   useEffect(() => {
     // Clear the previous timer
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
 
-    // If the query is empty, clear results
+    // If the query is empty, don't search empty strings
     if (query.trim() === '') {
       setResults([]);
       return;
     }
 
-    // Set a new timer to fetch results after 100ms
+    // Set a new timer to fetch results after 100ms, 
     timerRef.current = setTimeout(() => {
       getSearchResults(query);
     }, 100);
@@ -70,9 +72,11 @@ function SearchBar() {
     navigate(`/route/${result._id}`); // Adjust the path according to your routes
   };
 
+// JSX defins the UI
   return (
     <div className={styles.searchBar}>
       <form onSubmit={handleSearch} autoComplete="off">
+        // controlled component
         <input
           type="text"
           placeholder="Search for routes or crags"
