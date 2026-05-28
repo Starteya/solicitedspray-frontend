@@ -76,7 +76,7 @@ function SearchBar() {
   return (
     <div className={styles.searchBar}>
       <form onSubmit={handleSearch} autoComplete="off">
-        // controlled component
+        {/*controlled component*/}
         <input
           type="text"
           placeholder="Search for routes or crags"
