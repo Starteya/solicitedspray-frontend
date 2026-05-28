@@ -30,10 +30,14 @@ function SearchBar() {
   try {
     const response = await fetchRoutes(searchQuery);
     // Assuming the response data is an array of routes
-    const routes = response.data.routes;
+    
+    const routes = response?.data?.routes;
 
-    // Set top 5 results
-    setResults(routes.slice(0, 5)); // Adjust as needed
+    if (!Array.isArray(routes)) {
+      setResults([]);
+      return;
+    }
+setResults(routes.slice(0, 5));
   } catch (error) {
     console.error('Error fetching results', error);
     setResults([]);
