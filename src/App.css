@@ -1,4 +1,4 @@
-/* === Base App Styles === */
+/* Base App Styles */
 .App {
   text-align: center;
   min-height: 100vh;
@@ -10,7 +10,7 @@
   padding: 0;
 }
 
-/* === 🌐 Sticky Header: Title + Search Bar (Only when not on Home) === */
+/* Sticky Header: Title + Search Bar (Only when not on Home) */
 .app-header {
   display: flex;
   flex-direction: column;
@@ -48,7 +48,14 @@
   font-size: 0.95rem;
 }
 
-/* === 📦 Main Content === */
+/* default margins */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Content */
 main {
   padding: 1rem;
   padding-top: 0;
