@@ -16,8 +16,8 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem 1rem 0.75rem;
-  background-color: white;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #121212;
+  border-bottom: 1px solid #333;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -39,8 +39,11 @@
   max-width: 500px;
   padding: 0.6rem 0.8rem;
   font-size: 0.95rem;
-  border: 1px solid #ccc;
+  border: 1px solid #555;
+  background-color: #1e1e1e;          
   border-radius: 6px;
+  color: #ffffff;
+
 }
 
 .app-header button[type='submit'] {
@@ -57,10 +60,16 @@ body {
 
 /* Main Content */
 main {
-  padding: 1rem;
-  padding-top: 0;
+  padding: 0;           
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* spacing room when needed */
+main > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* Optional: Smooth transition for header */
