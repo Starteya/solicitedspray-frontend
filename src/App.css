@@ -63,10 +63,19 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  background-color: #121212;   /* ← match the dark theme of your site */
+  background-color: #121212;   /* dark theme */
   box-sizing: border-box;
 }
 
+.mainContent,
+.centerContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;                   
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 /* Main Content */
 main {
