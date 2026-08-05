@@ -1,5 +1,3 @@
-// src/App.js
-
 import React from 'react';
 import { 
   BrowserRouter as Router, 
@@ -17,32 +15,32 @@ import AddVideoPage from './pages/AddVideoPage';
 import RoutePage from './pages/RoutePage';
 
 // Components
-import SearchBar from './components/SearchBar'; // Make sure path is correct
+import SearchBar from './components/SearchBar';
 
 // CSS
 import './App.css';
 
-// Layout wrapper to access useLocation
 function App() {
   const location = useLocation();
-  const hideHeaderSearch = location.pathname === '/'; // Hide on homepage
+
+  // Hide the entire sticky header on the homepage only
+  const isHome = location.pathname === '/';
 
   return (
     <div className="App">
-      {/* Header: Always visible */}
-      <header className="app-header">
-        <h1 
-          onClick={() => window.location = '/'} 
-          style={{ cursor: 'pointer', margin: 0 }}
-        >
-          SolicitedSpray
-        </h1>
+      {/* Header is completely hidden on Home */}
+      {!isHome && (
+        <header className="app-header">
+          <h1 
+            onClick={() => window.location = '/'} 
+            style={{ cursor: 'pointer', margin: 0 }}
+          >
+            SolicitedSpray
+          </h1>
+          <SearchBar />
+        </header>
+      )}
 
-        {/* Show SearchBar in header everywhere EXCEPT home */}
-        {!hideHeaderSearch && <SearchBar />}
-      </header>
-
-      {/* Main Content */}
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -57,7 +55,6 @@ function App() {
   );
 }
 
-// Wrap in Router
 export default function Root() {
   return (
     <Router>
