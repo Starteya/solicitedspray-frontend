@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 
-/* Sticky Header: Title + Search Bar (Only when not on Home) */
+/* Sticky Header */
 .app-header {
   display: flex;
   flex-direction: column;
@@ -21,13 +21,13 @@
   padding: 1rem 1rem 0.75rem;
   background-color: #121212;
   border-bottom: 1px solid #333;
-  transition: box-shadow 0.2s ease-in-out;
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   gap: 0.5rem;
+  transition: box-shadow 0.2s ease-in-out;
 }
 
 .app-header h1 {
@@ -37,17 +37,16 @@
   color: #ffffff;
 }
 
-/* Style SearchBar when rendered inside header */
+/* SearchBar inside header */
 .app-header input[type='text'] {
   width: 100%;
   max-width: 500px;
   padding: 0.6rem 0.8rem;
   font-size: 0.95rem;
   border: 1px solid #555;
-  background-color: #1e1e1e;          
+  background-color: #1e1e1e;
   border-radius: 6px;
   color: #ffffff;
-
 }
 
 .app-header button[type='submit'] {
@@ -55,23 +54,17 @@
   font-size: 0.95rem;
 }
 
-/* default margins */
-body {
-  margin: 0;
-  padding: 0;
+/* Body & HTML */
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
   box-sizing: border-box;
+  background-color: #121212;
 }
 
-/* spacer */
-.spacer {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: #121212;   /* dark theme */
-  box-sizing: border-box;
-}
-
-/* Main Content */
+/* Main content area */
 main {
   padding: 0 !important;
   max-width: 100% !important;
@@ -80,27 +73,28 @@ main {
   box-sizing: border-box;
 }
 
-/* Remove the side padding */
+/* Remove any forced side padding on direct children of main */
 main > * {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
+/* Spacer */
+.spacer {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #121212;
+  box-sizing: border-box;
+}
+
+/* Centered content containers (keep 800px width + centering) */
 .mainContent,
 .centerContainer {
   max-width: 800px;
   margin: 0 auto;
-  width: 100%;                   
+  width: 100%;
   box-sizing: border-box;
   padding-left: 20px;
   padding-right: 20px;
-}
-
-body,
-html,
-main {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  width: 100%;
 }
