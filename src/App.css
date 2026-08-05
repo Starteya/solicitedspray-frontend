@@ -30,7 +30,7 @@
   margin: 0;
   font-size: 1.6rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
 /* Style SearchBar when rendered inside header */
@@ -57,6 +57,16 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* spacer */
+.spacer {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #121212;   /* ← match the dark theme of your site */
+  box-sizing: border-box;
+}
+
 
 /* Main Content */
 main {
