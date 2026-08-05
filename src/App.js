@@ -23,13 +23,13 @@ import './App.css';
 function App() {
   const location = useLocation();
 
-  // Hide the entire sticky header on the homepage only
-  const isHome = location.pathname === '/';
+  // Hide the entire sticky header on home, contact, & privacy
+const hideHeader = ['/', '/contact', '/privacy'].includes(location.pathname);
 
   return (
     <div className="App">
       {/* Header is completely hidden on Home */}
-      {!isHome && (
+      {!hideHeader && (
         <header className="app-header">
           <h1 
             onClick={() => window.location = '/'} 

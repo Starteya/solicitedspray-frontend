@@ -39,7 +39,8 @@ const RoutePage = () => {
     <div className={styles.routePage}>
       {/* Top Links */}
       <div className={styles.topLinks}>
-        <Link to="/">Home</Link>
+        <Link to="#" onClick={(e) => {e.preventDefault();window.history.back();}}
+            style={{ fontSize: '2rem', textDecoration: 'none', color: '#ffffff' }}>←</Link>
       {/*<Link to="/add-video">Add Your Video</Link>*/}
       </div>
 

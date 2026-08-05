@@ -77,7 +77,9 @@ function SearchResultsPage() {
     return (
       <div className={styles.searchResultsPage}>
         <div className={styles.topLinks}>
-          <Link to="/">Home</Link>
+          <Link to="#" onClick={(e) => {e.preventDefault();window.history.back();}}
+            style={{ fontSize: '2rem', textDecoration: 'none', color: '#ffffff' }}
+          >←</Link>
         </div>
 
         <div className={styles.centerContainer}>
