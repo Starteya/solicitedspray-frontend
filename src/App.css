@@ -6,8 +6,11 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box;
 }
 
 /* Sticky Header: Title + Search Bar (Only when not on Home) */
@@ -18,6 +21,7 @@
   padding: 1rem 1rem 0.75rem;
   background-color: #121212;
   border-bottom: 1px solid #333;
+  transition: box-shadow 0.2s ease-in-out;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -67,6 +71,21 @@ body {
   box-sizing: border-box;
 }
 
+/* Main Content */
+main {
+  padding: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Remove the side padding */
+main > * {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .mainContent,
 .centerContainer {
   max-width: 800px;
@@ -84,23 +103,4 @@ main {
   padding: 0;
   max-width: 100%;
   width: 100%;
-}
-
-/* Main Content */
-main {
-  padding: 0;           
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-/* spacing room when needed */
-main > * {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-/* Optional: Smooth transition for header */
-.app-header {
-  transition: box-shadow 0.2s ease-in-out;
 }
