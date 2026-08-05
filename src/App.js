@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* === 🌐 Header: Always visible === */}
+      {/* Header: Always visible */}
       <header className="app-header">
         <h1 
           onClick={() => window.location = '/'} 
@@ -38,11 +38,11 @@ function App() {
           SolicitedSpray
         </h1>
 
-        {/* 🔍 Show SearchBar in header everywhere EXCEPT home */}
+        {/* Show SearchBar in header everywhere EXCEPT home */}
         {!hideHeaderSearch && <SearchBar />}
       </header>
 
-      {/* === 📦 Main Content === */}
+      {/* Main Content */}
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
