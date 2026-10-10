@@ -9,32 +9,47 @@ import styles from './RoutePage.module.css'; // Import the CSS file
 
 const RoutePage = () => {
   const { id } = useParams();
-  const [route, setRoute] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [routeState, setRouteState] = useState({
+    id: null,
+    route: null,
+    loading: true,
+    error: null,
+  });
 
   useEffect(() => {
+    const controller = new AbortController();
+    setRouteState({ id, route: null, loading: true, error: null });
+
     const getRouteDetails = async () => {
       try {
-        const response = await fetchRouteDetails(id);
-        setRoute(response.data);
+        const response = await fetchRouteDetails(id, { signal: controller.signal });
+        setRouteState({ id, route: response.data, loading: false, error: null });
       } catch (error) {
+        if (controller.signal.aborted) return;
         console.error('Error fetching route details:', error);
-      } finally {
-        setLoading(false);
+        const status = error.response?.status;
+        const message = status === 404
+          ? 'Route not found.'
+          : status === 400
+            ? 'Invalid route link.'
+            : 'Unable to load this route. Please try again later.';
+        setRouteState({ id, route: null, loading: false, error: message });
       }
     };
 
     getRouteDetails();
+    return () => controller.abort();
   }, [id]);
 
-  if (loading) {
+  if (routeState.id !== id || routeState.loading) {
     return <Spinner />;
   }
 
-  if (!route) {
-    return <div className={styles.errorMessage}>Route not found.</div>;
+  if (routeState.error) {
+    return <div className={styles.errorMessage}>{routeState.error}</div>;
   }
 
+  const { route } = routeState;
   return (
     <div className={styles.routePage}>
       {/* Top Links */}

@@ -10,5 +10,5 @@ export const fetchRoutes = (query, { page, signal } = {}) =>
     signal,
   });
 
-export const fetchRouteDetails = (id) =>
-  axios.get(`${API_BASE_URL}/api/routes/${id}`); // GET request for backend. uses route ID from user click
+export const fetchRouteDetails = (id, { signal } = {}) =>
+  axios.get(`${API_BASE_URL}/api/routes/${id}`, { signal });
