@@ -1,7 +1,7 @@
 // src/components/SearchBar.js
 // A search bar that provides live-search auto complete from the route database
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './SearchBar.module.css';
 import { fetchRoutes } from '../api/api'; // import fetchRoutes function which fetches data from backend
@@ -11,60 +11,44 @@ function SearchBar() {
   const [query, setQuery] = useState(''); // state variable
   const [results, setResults] = useState([]); // state variable
   const navigate = useNavigate();
-  const location = useLocation();           
-  const timerRef = useRef(null);
+  const location = useLocation();
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim()) {
       setResults([]);                       // clears dropdown immediately
-      navigate(`/search?query=${encodeURIComponent(query)}`);
+      navigate(`/search?query=${encodeURIComponent(query.trim())}`);
     }
   };
 
   // Function to fetch results using fetchRoutes - from backend
-  const getSearchResults = async (searchQuery) => {
-    if (searchQuery.trim() === '') {
-      setResults([]);
-      return;
-    }
-
-    try {
-      const response = await fetchRoutes(searchQuery);
-      const routes = response?.data?.routes;
-
-      if (!Array.isArray(routes)) {
-        setResults([]);
-        return;
-      }
-      setResults(routes.slice(0, 5));
-    } catch (error) {
-      console.error('Error fetching results', error);
-      setResults([]);
-    }
-  };
-
-  // Effect to handle debounced search queries.
   useEffect(() => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
-
-    if (query.trim() === '') {
+    const searchQuery = query.trim();
+    if (!searchQuery) {
       setResults([]);
-      return;
+      return undefined;
     }
 
-    timerRef.current = setTimeout(() => {
-      getSearchResults(query);
-    }, 100);
+    setResults([]);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(async () => {
+      try {
+        const response = await fetchRoutes(searchQuery, { signal: controller.signal });
+        if (controller.signal.aborted) return;
+        const routes = response?.data?.routes;
+        setResults(Array.isArray(routes) ? routes.slice(0, 5) : []);
+      } catch (error) {
+        if (controller.signal.aborted) return;
+        console.error('Error fetching results', error);
+        setResults([]);
+      }
+    }, 250);
 
     return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
+      clearTimeout(timeoutId);
+      controller.abort();
     };
-  }, [query]);
+  }, [query, location.key]);
 
   // Clear autocomplete dropdown on every navigation
   useEffect(() => {
@@ -84,6 +68,7 @@ function SearchBar() {
         <input
           type="text"
           placeholder="Search for routes or crags"
+          maxLength={100}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />

@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { fetchRoutes as requestRoutes } from '../api/api';
 import RouteList from '../components/RouteList';
 import Spinner from '../components/Spinner';
 import Pagination from '../components/Pagination';
@@ -20,8 +20,10 @@ function SearchResultsPage() {
   const navigate = useNavigate();
 
   const queryParams = new URLSearchParams(location.search);
-  const query = queryParams.get('query') || '';
-  const page = parseInt(queryParams.get('page')) || 1;
+  const query = (queryParams.get('query') || '').trim();
+  const pageParam = queryParams.get('page');
+  const pageIsValid = pageParam === null || (/^[1-9]\d*$/.test(pageParam) && Number.isSafeInteger(Number(pageParam)));
+  const page = pageParam === null || !pageIsValid ? 1 : Number(pageParam);
 
   useEffect(() => {
     if (!query) {
@@ -30,28 +32,34 @@ function SearchResultsPage() {
       return;
     }
 
-    const fetchRoutes = async () => {
+    if (!pageIsValid) {
+      navigate(`/search?query=${encodeURIComponent(query)}&page=1`, { replace: true });
+      return;
+    }
+
+    const controller = new AbortController();
+    const loadRoutes = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/routes/search`, {
-          params: { query, page }
-        });
+        const response = await requestRoutes(query, { page, signal: controller.signal });
         setRoutes(response.data.routes);
         setTotalResults(response.data.totalResults);
         setTotalPages(response.data.totalPages);
         setCurrentPage(response.data.currentPage);
         setError(null);
       } catch (err) {
+        if (controller.signal.aborted) return;
         console.error('Error fetching routes:', err);
         setError('Error fetching routes. Please try again.');
         setRoutes([]);
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       }
     };
 
-    fetchRoutes();
-  }, [query, page]);
+    loadRoutes();
+    return () => controller.abort();
+  }, [query, page, pageIsValid, navigate]);
 
   const handlePageChange = (pageNumber) => {
     navigate(`/search?query=${encodeURIComponent(query)}&page=${pageNumber}`);
